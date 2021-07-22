@@ -1,14 +1,29 @@
-const Search = ({ setSearch }) => {
+// import component
+import Line from "./Line";
+
+// import JSON
+import datas from "../assets/data/emojiList_mar8cs.json";
+
+const Search = ({ keywords, setKeywords, searchSpace }) => {
+  let emojisFound = [];
+
   return (
-    <header>
-      <span role="img" aria-label="Sunglasses man">
-        😎 EmojiSearch 😎
-      </span>
-      <input
-        onChange={(event) => setSearch(event.target.value)}
-        placeholder="What emoji are you looking for ?"
-      ></input>
-    </header>
+    <>
+      <header>
+        <span>😎 EmojiSearch 😎</span>
+        <input
+          onChange={searchSpace}
+          placeholder="What emoji are you looking for ?"
+        ></input>
+      </header>
+      {datas.map((elem, index) => {
+        index < 20 && setKeywords(keywords.toLowerCase());
+        if (elem.keywords.indexOf(keywords) !== -1) {
+          return <Line key={index} title={elem.title} symbol={elem.symbol} />;
+        }
+        return <div></div>;
+      })}
+    </>
   );
 };
 

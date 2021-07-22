@@ -1,21 +1,12 @@
-import datas from "../assets/data/emojiList_mar8cs.json";
-
-const Line = () => {
-  console.log(datas[0].title);
+const Line = ({ title, symbol }) => {
   return (
-    <>
-      {datas.map((emoji, index) => {
-        return (
-          <div className="line">
-            <span key={index}>
-              {emoji.symbol}
-              {emoji.title}
-            </span>
-            {/* <span class="copy-span">Click to copy !</span> */}
-          </div>
-        );
-      })}
-    </>
+    <div className="line">
+      <span>
+        {symbol}
+        {title}
+      </span>
+      {/* <span class="copy-span">Click to copy !</span> */}
+    </div>
   );
 };
 
