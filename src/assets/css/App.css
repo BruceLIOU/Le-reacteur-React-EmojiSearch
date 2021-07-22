@@ -64,7 +64,12 @@ header > input {
   background-color: #f8efef;
   cursor: pointer;
 }
-.copy-span{
+.copy-span {
+  visibility: hidden;
+}
+
+.line:hover .copy-span:hover {
+  visibility: visible;
   position:absolute;
   right:20px;
   font-size:15px
