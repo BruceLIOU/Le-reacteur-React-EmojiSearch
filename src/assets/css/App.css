@@ -68,11 +68,13 @@ header > input {
   visibility: hidden;
 }
 
-.line:hover .copy-span:hover {
+.line:hover > .copy-span {
   visibility: visible;
   position:absolute;
   right:20px;
-  font-size:15px
+  font-size:15px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* Footer */
